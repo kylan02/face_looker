@@ -55,10 +55,29 @@ source ~/.zshrc
 
 ### Step 3: Prepare Your Face Image
 
+**Image Requirements:**
 - Use a **512×512 pixel** image for best results
 - Face should be centered and looking straight ahead
 - Good lighting, clear features
 - Neutral expression works best
+
+**Where to put your image:**
+1. **Place your face image** in the project root directory (same folder as `main.py`)
+2. **Name it something simple** like `my_face.jpg` or `portrait.jpg`
+3. **Example file structure:**
+   ```
+   face_looker/
+   ├── main.py
+   ├── my_face.jpg          ← Your image goes here
+   ├── requirements.txt
+   └── README.md
+   ```
+
+**Before running the script, make sure you have:**
+- ✅ Set your `REPLICATE_API_TOKEN` environment variable
+- ✅ Activated your virtual environment (if using one)
+- ✅ Installed dependencies with `pip install -r requirements.txt`
+- ✅ Your face image is in the project directory
 
 ### Step 4: Generate Your Face Grid
 
