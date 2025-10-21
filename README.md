@@ -62,15 +62,21 @@ source ~/.zshrc
 - Neutral expression works best
 
 **Where to put your image:**
-1. **Place your face image** in the project root directory (same folder as `main.py`)
-2. **Name it something simple** like `my_face.jpg` or `portrait.jpg`
+1. **Any filename works!** You can use any name like `me.jpg`, `portrait.png`, `selfie.jpeg`, etc.
+2. **Any location works!** You can put it in the project folder or anywhere on your computer
 3. **Example file structure:**
    ```
    face_looker/
    ├── main.py
-   ├── my_face.jpg          ← Your image goes here
+   ├── my_face.jpg          ← Your image can go here
    ├── requirements.txt
    └── README.md
+   ```
+   
+   **Or anywhere else:**
+   ```
+   /Users/you/Pictures/portrait.png
+   /path/to/any/folder/selfie.jpg
    ```
 
 **Before running the script, make sure you have:**
@@ -83,7 +89,10 @@ source ~/.zshrc
 
 **Basic usage:**
 ```bash
+# Any filename works!
 python main.py --image ./my_face.jpg --out ./out
+python main.py --image ./portrait.png --out ./out
+python main.py --image /Users/you/Pictures/selfie.jpg --out ./out
 ```
 
 **Custom grid density:**
