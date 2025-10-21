@@ -415,7 +415,7 @@ MIT License - feel free to use in personal and commercial projects!
 
 - Face generation powered by [Replicate](https://replicate.com/)
 - Uses [fofr/expression-editor](https://replicate.com/fofr/expression-editor) model
-- Created with ❤️ by [your name]
+- Created with ❤️ by Kylan
 
 ## 🔗 Links
 
