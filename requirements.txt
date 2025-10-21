@@ -1,0 +1,11 @@
+# Face Looker Dependencies
+# For generating gaze-direction face images using Replicate AI
+
+# Replicate API client
+replicate>=0.22.0
+
+# Image processing
+pillow>=10.0.0
+
+# Progress bars for generation
+tqdm>=4.66.0

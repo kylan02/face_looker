@@ -1,0 +1,46 @@
+{
+  "name": "face-looker",
+  "version": "1.0.0",
+  "description": "Generate AI-powered gaze-tracking face images and use them to create interactive React components that follow the cursor",
+  "main": "useGazeTracking.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/face_looker.git"
+  },
+  "keywords": [
+    "react",
+    "face-tracking",
+    "gaze-tracking",
+    "interactive",
+    "replicate",
+    "ai",
+    "cursor-tracking",
+    "mouse-tracking",
+    "animation",
+    "portfolio"
+  ],
+  "author": "Kylan O'Connor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/face_looker/issues"
+  },
+  "homepage": "https://github.com/yourusername/face_looker#readme",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "files": [
+    "useGazeTracking.js",
+    "FaceTracker.jsx",
+    "FaceTracker.css",
+    "main.py",
+    "generate_missing.py",
+    "requirements.txt",
+    "README.md",
+    "LICENSE",
+    "examples/"
+  ]
+}
+
