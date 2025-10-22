@@ -421,7 +421,6 @@ MIT License - feel free to use in personal and commercial projects!
 
 - [Replicate API Docs](https://replicate.com/docs)
 - [Expression Editor Model](https://replicate.com/fofr/expression-editor)
-- [Live Demo](https://your-demo-url.com)
 
 ---
 
