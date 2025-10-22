@@ -425,6 +425,6 @@ MIT License - feel free to use in personal and commercial projects!
 
 ---
 
-**Questions?** Open an issue or contact [your-email@example.com]
+**Questions?** Open an issue or contact me on X @kylancodes
 
 **Like this project?** Give it a ⭐ on GitHub!
