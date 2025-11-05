@@ -1,5 +1,11 @@
 # Face Looker 👁️
 
+
+
+https://github.com/user-attachments/assets/c8684ae4-3009-47cb-8ad4-0e7af65a608f
+
+
+
 Generate a grid of face images with different gaze directions using AI, then use them to create an interactive face that follows the user's cursor in real-time.
 
 ![Demo](demo.gif)
@@ -443,7 +449,7 @@ MIT License - feel free to use in personal and commercial projects!
 
 - Face generation powered by [Replicate](https://replicate.com/)
 - Uses [fofr/expression-editor](https://replicate.com/fofr/expression-editor) model
-- Created with ❤️ by [your name]
+- Created with ❤️ by Kylan
 
 ## 🔗 Links
 
