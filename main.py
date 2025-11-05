@@ -51,10 +51,10 @@ def frange(start: float, stop: float, step: float) -> Iterable[float]:
 def clamp(v: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, v))
 
-def build_gaze_grid(vmin: float, vmax: float, step: float) -> List[GazePoint]:
-    """Build a square grid of (pupil_x, pupil_y)."""
-    xs = list(frange(vmin, vmax, step))
-    ys = list(frange(vmin, vmax, step))
+def build_gaze_grid(xmin: float, xmax: float, ymin: float, ymax: float, step: float) -> List[GazePoint]:
+    """Build a grid of (pupil_x, pupil_y) with separate ranges for X and Y."""
+    xs = list(frange(xmin, xmax, step))
+    ys = list(frange(ymin, ymax, step))
     grid = [GazePoint(px=x, py=y) for y in ys for x in xs]
     return grid
 
@@ -122,8 +122,10 @@ def main():
     parser = argparse.ArgumentParser(description="Generate gaze images with varying pupil_x/y using Replicate.")
     parser.add_argument("--image", required=True, help="Path to local image (512x512 recommended) or URL")
     parser.add_argument("--out", default="./out", help="Output directory")
-    parser.add_argument("--min", dest="vmin", type=float, default=-15.0, help="Minimum value for pupil_x/y")
-    parser.add_argument("--max", dest="vmax", type=float, default=15.0, help="Maximum value for pupil_x/y")
+    parser.add_argument("--xmin", type=float, default=-15.0, help="Minimum value for pupil_x (left)")
+    parser.add_argument("--xmax", type=float, default=15.0, help="Maximum value for pupil_x (right)")
+    parser.add_argument("--ymin", type=float, default=-15.0, help="Minimum value for pupil_y (down)")
+    parser.add_argument("--ymax", type=float, default=15.0, help="Maximum value for pupil_y (up)")
     parser.add_argument("--step", type=float, default=3.0, help="Step size for grid sampling")
     parser.add_argument("--size", type=int, default=256, help="Resize dimension (square) for outputs")
     parser.add_argument("--skip-existing", action="store_true", help="Skip generation if target file already exists")
@@ -148,7 +150,7 @@ def main():
         image_input = open(p, "rb")
 
     # Build grid and iterate
-    grid = build_gaze_grid(args.vmin, args.vmax, args.step)
+    grid = build_gaze_grid(args.xmin, args.xmax, args.ymin, args.ymax, args.step)
     index_rows: List[Tuple[str, float, float]] = []
 
     for gp in tqdm(grid, desc="Generating", unit="img"):

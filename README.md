@@ -7,19 +7,45 @@ Generate a grid of face images with different gaze directions using AI, then use
 ## 🎯 Overview
 
 This project has two parts:
-1. **Python Script** - Generates hundreds of face images looking in different directions using Replicate's AI
+1. **Generate Face Images** - Create hundreds of face images looking in different directions using either:
+   - **Replicate Model** (easiest) - Upload your image and get everything you need in one click
+   - **Python Script** (advanced) - More control over generation parameters
 2. **React Hook** - Makes those images interactive by displaying the right image based on cursor position
 
 Perfect for creating engaging portfolio headers, interactive avatars, or fun UI elements!
 
 ## 📋 Prerequisites
 
-- Python 3.7+
+- A 512×512 photo of a face (your photo or any portrait)
 - Node.js (for React implementation)
 - [Replicate API account](https://replicate.com/) (free tier available)
-- A 512×512 photo of a face (your photo or any portrait)
 
 ## 🚀 Part 1: Generate Face Images
+
+You have two options to generate the face images:
+
+### Option 1: Use the Replicate Model (Easiest) ✨
+
+The easiest way to get started is using the dedicated [Replicate model](https://replicate.com/kylan02/face-looker) created in collaboration with [fofr](https://x.com/fofrAI). Simply upload your face image and it will automatically generate:
+
+- ✅ All the face images looking in different directions
+- ✅ A sprite/grid sheet that combines all faces into a single image
+- ✅ A ZIP file containing vanilla HTML, JS and CSS to render the effect
+- ✅ A preview video showing how the animation will look
+
+**To use it:**
+1. Visit [https://replicate.com/kylan02/face-looker](https://replicate.com/kylan02/face-looker)
+2. Upload your 512×512 face image
+3. Download the generated ZIP file
+4. Extract and use the images/code in your project
+
+The model automatically uses the Expression Editor model to generate all the images you need. See the [model page](https://replicate.com/kylan02/face-looker) for more details.
+
+### Option 2: Use the Python Script (Advanced) 🔧
+
+If you prefer more control over the generation process or want to customize the parameters, you can use the Python script described below.
+
+---
 
 ### Step 1: Setup
 
@@ -86,6 +112,17 @@ source ~/.zshrc
 - ✅ Your face image is in the project directory
 
 ### Step 4: Generate Your Face Grid
+
+**📊 How many images will be created?**
+
+The default settings create **121 images** (11×11 grid), but you can customize this:
+
+| Step Size | Grid Size | Total Images | Generation Time | Smoothness |
+|-----------|-----------|--------------|-----------------|------------|
+| `--step 5` | 7×7 | **49 images** | ~2-3 minutes | Basic |
+| `--step 3` (default) | 11×11 | **121 images** | ~5-8 minutes | Good |
+| `--step 2.5` | 13×13 | **169 images** | ~8-12 minutes | Smooth |
+| `--step 2` | 16×16 | **256 images** | ~12-18 minutes | Very smooth |
 
 **Basic usage:**
 ```bash
@@ -370,10 +407,7 @@ python main.py --image ./my_face.jpg --out ./out --skip-existing
 
 ## 📊 Cost Estimation
 
-Replicate charges per second of GPU time. As of 2024:
-- ~$0.0001 per image
-- 121 images (default): ~$0.01
-- 169 images (step=2.5): ~$0.02
+Replicate charges per second of GPU time, it should only be a couple of cents.
 
 Check current pricing at [replicate.com/pricing](https://replicate.com/pricing)
 
@@ -413,12 +447,13 @@ MIT License - feel free to use in personal and commercial projects!
 
 ## 🔗 Links
 
+- [Face Looker Replicate Model](https://replicate.com/kylan02/face-looker) - Generate all images with one click
 - [Replicate API Docs](https://replicate.com/docs)
 - [Expression Editor Model](https://replicate.com/fofr/expression-editor)
-- [Live Demo](https://your-demo-url.com)
+- [Live Demo](https://kylanoconnor.com)
 
 ---
 
-**Questions?** Open an issue or contact [your-email@example.com]
+**Questions?** Open an issue or contact [@kylancodes](https://x.com/kylancodes) on X
 
 **Like this project?** Give it a ⭐ on GitHub!
